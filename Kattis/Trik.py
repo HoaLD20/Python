@@ -1,3 +1,6 @@
+"""
+Simple thinking
+"""
 n = input()
 re = 1
 if n[0] == "A":
