@@ -1,13 +1,13 @@
+import collections
 n = int(input())
 data = {}
 for i in range(n):
     a, b = input().split()
     try:
         if int(a):
-            data.update({b: int(a) / 2})
-        else:
-            data.update({a: int(b)})
+            data.update({b: int(a)//2})
     except:
-        None
-for k, v in data.items():
-    print(k, v)
+        data.update({a: int(b)})
+huhu = collections.OrderedDict(sorted(data.items()))
+for k, v in huhu.items():
+    print(k)
