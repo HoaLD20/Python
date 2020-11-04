@@ -86,7 +86,6 @@ def test_100caseWrong():
         # browser.implicitly_wait(10)
 
         browser.get("http://localhost:8080/signup.jsp")
-
         # browser.implicitly_wait(10)
         a = random.randint(5, 9999)
         # email wrong
