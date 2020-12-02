@@ -1,17 +1,43 @@
-a = input()  # get hands and value of suit
-numOfPoint = int(a[0]) * 4  # number of input
-number = ["A", "K", "Q", "J", "T", "9", "8", "7"]
-dominant = [1, 4, 3, 20, 10, 14, 0, 0]
-notdominant = [11, 4, 3, 2, 10, 0, 0, 0]
-total = 0
-while numOfPoint > 0:  # get input
-    value = input()  # input
-    getValue = value[0]  # get first value from input
-    for i in range(len(number)):
-        if getValue == number[i]:
+def compute_hand_score(card, suit, dominant_suit):
+    if suit == dominant_suit:
+        return dominant_values[card]
+    return values[card]
 
-            total += abs(dominant[i] - notdominant[i])
 
-    numOfPoint -= 1
+values = {
+    'A': 11,
+    'K': 4,
+    'Q': 3,
+    'J': 2,
+    'T': 10,
+    '9': 0,
+    '8': 0,
+    '7': 0
+}
 
-print(total)
+dominant_values = {
+    'A': 11,
+    'K': 4,
+    'Q': 3,
+    'J': 20,
+    'T': 10,
+    '9': 14,
+    '8': 0,
+    '7': 0
+}
+#input value
+first_line = input().split(' ')
+#get total input
+total_hands = int(first_line[0])
+#
+dominant_suit = first_line[1]
+i = 0
+max_i = total_hands * 4
+total_points = 0
+
+while i < max_i:
+    line = input() #get
+    total_points += compute_hand_score(line[0], line[1], dominant_suit)
+    i += 1
+
+print(total_points)
